@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.function.Supplier;
 
 public class MemoryTest {
-    private static final int ARRAY_SIZE = 1_000_000;
+    private static final int ARRAY_SIZE = 100_000;
 
     public Object[] testSerializable(Serializable testedObject) throws Exception {
         Runtime runtime = Runtime.getRuntime();
