@@ -1,8 +1,11 @@
-package net.kuryshev;
+package net.kuryshev.strategy;
+
+import net.kuryshev.Cell;
+import net.kuryshev.exception.CouldNotBeWithdrawnException;
 
 import java.util.List;
 
-public class GreedyStrategy implements WithdrawalStrategy{
+public class GreedyStrategy implements WithdrawalStrategy {
 
     @Override
     public void processWithdrawal(List<Cell> sortedCells, int amount) throws CouldNotBeWithdrawnException {

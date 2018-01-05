@@ -11,5 +11,4 @@ public class CollectionUtils {
         for (Cell cell : cells) copy.add(cell.clone());
         return copy;
     }
-
 }

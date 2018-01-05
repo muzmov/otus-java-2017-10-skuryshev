@@ -1,10 +1,14 @@
-package net.kuryshev;
+package net.kuryshev.strategy;
+
+import net.kuryshev.Cell;
+import net.kuryshev.exception.CouldNotBeWithdrawnException;
+import net.kuryshev.LinkableCell;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RecursiveStrategy implements WithdrawalStrategy{
+public class RecursiveStrategy implements WithdrawalStrategy {
 
     @Override
     public void processWithdrawal(List<Cell> sortedCells, int amount) throws CouldNotBeWithdrawnException {

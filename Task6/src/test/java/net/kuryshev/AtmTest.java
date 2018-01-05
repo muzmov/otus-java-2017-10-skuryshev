@@ -1,5 +1,6 @@
 package net.kuryshev;
 
+import net.kuryshev.exception.CouldNotBeWithdrawnException;
 import org.junit.Test;
 
 import java.util.ArrayList;

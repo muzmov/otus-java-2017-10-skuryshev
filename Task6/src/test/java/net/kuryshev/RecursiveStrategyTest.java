@@ -1,5 +1,7 @@
 package net.kuryshev;
 
+import net.kuryshev.exception.CouldNotBeWithdrawnException;
+import net.kuryshev.strategy.RecursiveStrategy;
 import org.junit.Test;
 
 import java.util.Arrays;

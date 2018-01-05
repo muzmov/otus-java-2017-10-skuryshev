@@ -1,4 +1,7 @@
-package net.kuryshev;
+package net.kuryshev.strategy;
+
+import net.kuryshev.Cell;
+import net.kuryshev.exception.CouldNotBeWithdrawnException;
 
 import java.util.List;
 

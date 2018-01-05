@@ -1,5 +1,9 @@
 package net.kuryshev;
 
+import net.kuryshev.exception.CouldNotBeWithdrawnException;
+import net.kuryshev.strategy.GreedyStrategy;
+import net.kuryshev.strategy.WithdrawalStrategy;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -52,5 +56,4 @@ public class Atm {
         cells = CollectionUtils.deepCopy(memento.get(index));
         memento = memento.stream().limit(index + 1).collect(Collectors.toList());
     }
-
 }

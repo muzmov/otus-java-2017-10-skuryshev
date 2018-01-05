@@ -1,4 +1,4 @@
-package net.kuryshev;
+package net.kuryshev.exception;
 
 public class CouldNotBeWithdrawnException extends RuntimeException {
     public CouldNotBeWithdrawnException() {
