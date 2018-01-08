@@ -7,14 +7,14 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
 
-public class MyJsonObjectBuilder {
+public class ObjectSerializer {
     private static final Set<Class> primitives = new HashSet<>(Arrays.asList(
             Byte.class, Short.class, Integer.class, Long.class, Float.class, Double.class, Boolean.class, Character.class));
 
     private Object object;
     private String jsonCache;
 
-    public MyJsonObjectBuilder(Object object) {
+    public ObjectSerializer(Object object) {
         this.object = object;
     }
 
@@ -28,8 +28,8 @@ public class MyJsonObjectBuilder {
         if (object == null) return "null";
         if (primitives.contains(object.getClass())) json += object.toString();
         else if (object.getClass() == String.class) json += "'" + object.toString() + "'";
-        else if (object.getClass().isArray()) json += new MyJsonArrayBuilder(ArrayUtils.toObjects(object)).toJson();
-        else if (object instanceof Collection) json += new MyJsonArrayBuilder((Collection) object).toJson();
+        else if (object.getClass().isArray()) json += new ArraySerializer(ArrayUtils.toObjects(object)).toJson();
+        else if (object instanceof Collection) json += new ArraySerializer((Collection) object).toJson();
         else {
             Field[] fields = object.getClass().getDeclaredFields();
             json += Stream.of(fields)
@@ -51,7 +51,7 @@ public class MyJsonObjectBuilder {
             e.printStackTrace();
         }
         String json = field.getName() + "=";
-        MyJsonObjectBuilder objectBuilder = new MyJsonObjectBuilder(fieldValue);
+        ObjectSerializer objectBuilder = new ObjectSerializer(fieldValue);
         json += objectBuilder.toJson();
         return json;
     }

@@ -7,15 +7,15 @@ import java.util.List;
 
 import static java.util.stream.Collectors.joining;
 
-public class MyJsonArrayBuilder {
+public class ArraySerializer {
     private List<Object> elems;
     private String jsonCache;
 
-    public MyJsonArrayBuilder(Object[] array) {
+    public ArraySerializer(Object[] array) {
         elems = Arrays.asList(array);
     }
 
-    public MyJsonArrayBuilder(Collection collection) {
+    public ArraySerializer(Collection collection) {
         elems = new ArrayList<>();
         elems.addAll(collection);
     }
@@ -27,7 +27,7 @@ public class MyJsonArrayBuilder {
 
     private String buildJson() {
         return elems.stream()
-                .map(e -> new MyJsonObjectBuilder(e).toJson())
+                .map(e -> new ObjectSerializer(e).toJson())
                 .collect(joining(", ", "[", "]"));
     }
 }
