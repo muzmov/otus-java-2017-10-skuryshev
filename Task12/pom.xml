@@ -74,7 +74,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>net.net.kuryshev.Main</mainClass>
+                            <mainClass>net.kuryshev.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -1,0 +1,17 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="cache" class="net.kuryshev.cache.Cache">
+    </bean>
+
+    <bean id="dbServiceHibernate" class="net.kuryshev.service.DBServiceHibernateImpl">
+        <constructor-arg ref="cache"/>
+    </bean>
+
+    <bean id="mainBean" class="net.kuryshev.Main">
+        <constructor-arg ref="dbServiceHibernate"/>
+    </bean>
+
+</beans>
