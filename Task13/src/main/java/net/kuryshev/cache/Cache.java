@@ -1,5 +1,7 @@
 package net.kuryshev.cache;
 
+import org.springframework.stereotype.Component;
+
 import java.lang.ref.SoftReference;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -7,6 +9,8 @@ import java.util.stream.Collectors;
 /**
  * Created by Sergey.Kuryshev on 26.01.2018
  */
+
+@Component
 public class Cache<K, V> {
     private static final int CLEAN_PERIOD = 1000;
 

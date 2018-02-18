@@ -11,15 +11,19 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.function.Function;
 
+@Component
 public class DBServiceHibernateImpl implements DBService, AutoCloseable {
     private SessionFactory sessionFactory;
     private final Configuration configuration;
 
     private final Cache<Long, DataSet> cache;
 
+    @Autowired
     public DBServiceHibernateImpl(Cache<Long, DataSet> cache) {
         this.cache = cache;
 

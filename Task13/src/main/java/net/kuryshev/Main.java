@@ -5,12 +5,15 @@ import net.kuryshev.entity.PhoneDataSet;
 import net.kuryshev.entity.UsersDataSet;
 import net.kuryshev.service.DBService;
 import net.kuryshev.service.DBServiceHibernateImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Timer;
 import java.util.TimerTask;
 
+@Component
 public class Main {
 
     private UsersDataSet user;
@@ -20,6 +23,7 @@ public class Main {
 
     private DBService dbServiceHibernate;
 
+    @Autowired
     public Main(DBService dbServiceHibernate) {
         this.dbServiceHibernate = dbServiceHibernate;
         prepareData();
